@@ -1,0 +1,36 @@
+<h2>Heroes: </h2>
+<div><span>id: {{heroes.id}}</span></div>
+<div><span>nombre: {{heroes.name | upperPipe}}</span></div>
+<!--upperPipe es una pipe personalizada-->
+<br>
+
+<div class="Editar">
+    <label> Nombre: 
+        <input [(ngModel)]="heroes.name" placeholder="name"/> 
+    </label>
+</div>
+
+
+<div class="lista">
+<h2>Lista de heroes</h2>
+<ul>
+    <li>
+        <span class="badge">{{heroes.id}}  </span>{{heroes.name}}
+    </li>
+</ul>
+
+<!--Lista completa con *ngfor=  con sus eventos click----->
+Lista Completa
+<ul class="heroes">
+    <li *ngFor="let hero of heroess" 
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)"> 
+        <!--Creo la variable hero de heroess y en el click la envio por parametro-->
+    <span class="badge">{{hero.id}}  </span>{{hero.name}}
+    </li>
+</ul>
+</div>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
