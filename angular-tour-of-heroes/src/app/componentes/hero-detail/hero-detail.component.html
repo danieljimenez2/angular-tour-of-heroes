@@ -8,7 +8,12 @@
             name: 
             <input [(ngModel)]="hero.name" placeholder="name"/>
         </label>
-    
+        <br>
+        <button (click)="updateHero()">Save</button>
+        <button (click)="deleteHero()">Delete</button>
     </div>
-    
+    <br>
+    <button>
+        <a routerLink="/dashboard">Volver</a>
+    </button>
     </div>

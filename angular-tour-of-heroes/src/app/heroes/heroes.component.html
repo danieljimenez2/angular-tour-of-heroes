@@ -31,6 +31,9 @@ Lista Completa
 </ul>
 </div>
 
+<h2>Añade un nuevo heroe</h2>
+<input [(ngModel)]="newHero.name" placeholder="Nuevo Heroe"/>
+<button (click)="addHero()">Crea el heroe</button>
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
